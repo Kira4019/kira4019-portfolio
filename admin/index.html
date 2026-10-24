@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Painel do portfólio — kira4019</title>
+  <style>
+    :root { --bg:#0f1115; --panel:#171a21; --line:#2a2f3a; --text:#e6e9ef; --mute:#8b93a4; --accent:#7c5cff; --danger:#e5484d; --ok:#2fb344; }
+    * { box-sizing: border-box; }
+    body { margin:0; font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background:var(--bg); color:var(--text); }
+    header { position:sticky; top:0; z-index:5; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 20px; background:var(--panel); border-bottom:1px solid var(--line); }
+    header h1 { font-size:16px; margin:0; }
+    header .actions { display:flex; gap:8px; align-items:center; }
+    main { max-width: 900px; margin: 24px auto; padding: 0 16px 80px; }
+    h2 { font-size:18px; margin:0 0 12px; }
+    .hint { color:var(--mute); font-size:13px; margin:0 0 16px; }
+    button, .btn { font:inherit; cursor:pointer; border:1px solid var(--line); background:#20242e; color:var(--text); padding:8px 14px; border-radius:8px; text-decoration:none; display:inline-flex; align-items:center; gap:6px; }
+    button:hover, .btn:hover { border-color:#3b4252; }
+    button.primary { background:var(--accent); border-color:var(--accent); color:#fff; font-weight:600; }
+    button.danger { color:#ffb4b6; border-color:#4a2a2c; background:#2a1a1c; }
+    button.add { width:100%; margin-top:8px; border-style:dashed; color:var(--mute); }
+    button:disabled { opacity:.5; cursor:wait; }
+    input[type=text], input[type=password], input[type=number], textarea, select {
+      width:100%; font:inherit; color:var(--text); background:#0c0e13; border:1px solid var(--line); border-radius:8px; padding:8px 10px; }
+    textarea { min-height:70px; resize:vertical; }
+    input:focus, textarea:focus, select:focus { outline:none; border-color:var(--accent); }
+    .login { max-width:360px; margin:12vh auto; background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:28px; }
+    .login form { display:grid; gap:12px; }
+    .err { color:#ffb4b6; font-size:13px; min-height:18px; margin:0; }
+    details.sec { background:var(--panel); border:1px solid var(--line); border-radius:12px; margin-bottom:12px; }
+    details.sec > summary { cursor:pointer; padding:14px 16px; font-weight:600; list-style:none; }
+    details.sec > summary::-webkit-details-marker { display:none; }
+    details.sec > summary::after { content:'▸'; float:right; color:var(--mute); transition:.2s; }
+    details.sec[open] > summary::after { transform:rotate(90deg); }
+    .secbody { padding: 4px 16px 16px; border-top:1px solid var(--line); }
+    .field { margin-top:14px; }
+    .field > label { display:block; font-size:13px; color:var(--mute); margin-bottom:6px; }
+    .row { display:flex; gap:8px; align-items:flex-start; }
+    .row > :first-child { flex:1; }
+    .img-field { display:grid; grid-template-columns: 56px 1fr; gap:10px; align-items:center; }
+    .thumb { width:56px; height:56px; object-fit:cover; border-radius:8px; background:#0c0e13; border:1px solid var(--line); }
+    .img-field .controls { display:grid; gap:6px; }
+    .list { display:grid; gap:12px; }
+    .item { border:1px solid var(--line); border-radius:10px; padding:12px; background:#13161c; }
+    .item__head { display:flex; justify-content:space-between; align-items:center; font-size:12px; color:var(--mute); margin-bottom:4px; }
+    .item > .field:first-of-type { margin-top:6px; }
+    .item .item { background:#0f1217; }
+    .bool { display:flex; align-items:center; gap:8px; }
+    .toast { position:fixed; bottom:20px; left:50%; transform:translateX(-50%); background:#222734; border:1px solid var(--line); padding:10px 16px; border-radius:10px; font-size:14px; opacity:0; transition:.25s; pointer-events:none; max-width:90vw; }
+    .toast.show { opacity:1; }
+    .toast.bad { border-color:var(--danger); }
+    .toast.good { border-color:var(--ok); }
+    .hidden { display:none !important; }
+    .loading { color:var(--mute); padding:40px; text-align:center; }
+  </style>
+</head>
+<body>
+
+  <!-- Tela de login -->
+  <div id="loginView" class="login hidden">
+    <h2>Entrar no painel</h2>
+    <p class="hint">Use a senha configurada em <code>config/admin.php</code>.</p>
+    <form id="loginForm" autocomplete="current-password">
+      <input type="password" id="pass" placeholder="Senha" required />
+      <button class="primary" type="submit" id="loginBtn">Entrar</button>
+      <p class="err" id="loginErr"></p>
+    </form>
+  </div>
+
+  <!-- Painel de edição -->
+  <div id="appView" class="hidden">
+    <header>
+      <h1>Painel do portfólio</h1>
+      <div class="actions">
+        <a class="btn" href="../" target="_blank" rel="noopener">Ver site ↗</a>
+        <button id="saveBtn" class="primary" type="button">Salvar alterações</button>
+        <button id="logoutBtn" type="button">Sair</button>
+      </div>
+    </header>
+    <main>
+      <p class="hint">Edite as seções abaixo e clique em <b>Salvar alterações</b>. Depois, recarregue a página do site para ver o resultado. Imagens enviadas ficam em <code>assets/uploads/</code>.</p>
+      <div id="editor"><div class="loading">Carregando…</div></div>
+    </main>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

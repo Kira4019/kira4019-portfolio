@@ -1,0 +1,5 @@
+Options -Indexes
+ErrorDocument 404 /404.html
+# backups e arquivos temporários não são públicos
+RedirectMatch 403 ^/data/site\.backup\.json$
+RedirectMatch 403 ^/data/site\.json\.tmp$

@@ -1,0 +1,56 @@
+========================================
+  PORTFÓLIO DO KIRA4019 — COMECE AQUI
+========================================
+
+1) EXTRAIA O ZIP
+   Extraia esta pasta em qualquer lugar do computador.
+
+2) RODE O SITE
+   Windows:
+     - Dê dois cliques em "start.bat".
+     - O navegador abre em http://localhost:8000
+
+   Linux / macOS:
+     - Abra o terminal na pasta e rode: ./start.sh
+     - Depois abra http://localhost:8000
+
+3) PAINEL DE EDIÇÃO (OPCIONAL)
+   - Endereço: http://localhost:8000/admin
+   - A senha fica em config/admin.php, que é um arquivo local e não vai
+     para o GitHub. No ZIP original, veja o comentário dentro dele.
+   - O painel precisa de PHP 8.1+ instalado.
+   - Se você não tem PHP, edite o arquivo data/site.json
+     ou use um servidor local com PHP (XAMPP, Laragon etc.).
+
+4) O QUE EDITAR
+   - Todo o conteúdo fica em data/site.json.
+   - As imagens ficam em assets/.
+   - Foto/logo: assets/kira.webp. Ícone da aba: assets/favicon.png.
+   - Contatos atuais:
+       e-mail: kiraa4019@gmail.com
+       discord: kira4019
+       github: https://github.com/kira4019
+     Troque se algum mudar.
+
+5) MÚSICA DE FUNDO
+   - "worry (slowed)" — lonown, já incluída em:
+       assets/music/worry-slowed.mp3
+   - O navegador bloqueia som automático: o player aparece no canto
+     inferior e a música começa no primeiro clique/toque na página
+     (ou pela tecla M / botão de música no canto).
+   - Se o MP3 não carregar, o site tenta o player do YouTube.
+     O player também tem links para Spotify e YouTube.
+   - Para trocar o MP3: substitua o arquivo em assets/music/ ou mude
+     o campo "local" em data/site.json.
+   - Para usar só o YouTube: deixe "local": "".
+   - Para desativar: em data/site.json, use "enabled": false.
+   - Use apenas áudios que você tenha direito de usar.
+
+6) PUBLICAR NA HOSTINGER
+   - Envie o conteúdo desta pasta para public_html.
+   - Ative PHP 8.1+ no hPanel.
+   - Dê permissão 755 para data/ e assets/.
+   - Ative o SSL.
+   - Troque a senha padrão do painel antes de publicar.
+
+Mais detalhes: veja o arquivo README.md.

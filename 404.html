@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0d0b14" />
+  <title>Erro 404 — kira4019</title>
+
+  <link rel="icon" href="assets/favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@600;700;800;900&family=Sora:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <script>try{var t=localStorage.getItem('kira4019-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+
+  <style>
+    .err {
+      min-height: 100vh; display: flex; flex-direction: column;
+      align-items: center; justify-content: flex-end;
+      text-align: center; padding: 40px 24px 14vh;
+    }
+    .err__icon {
+      font-size: 3.4rem; line-height: 1; margin-bottom: 22px;
+      animation: errFloat 3s ease-in-out infinite;
+    }
+    @keyframes errFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    .err__title {
+      font-family: var(--font-display); font-weight: 800; text-transform: uppercase;
+      font-size: clamp(1.6rem, 5vw, 2.6rem); line-height: 1.1; letter-spacing: .5px;
+      color: var(--text); margin-bottom: 14px;
+    }
+    .err__text { color: var(--text-dim); font-size: 1.02rem; max-width: 460px; line-height: 1.7; }
+    .err__code {
+      margin: 26px 0 28px; font-family: var(--font-mono); font-size: .85rem;
+      letter-spacing: 3px; text-transform: uppercase; color: #ff5c5f;
+      padding: 7px 18px; border-radius: var(--radius-pill);
+      background: rgba(242, 63, 67, .12); border: 1px solid rgba(242, 63, 67, .35);
+    }
+  </style>
+</head>
+<body>
+  <div class="glow glow--1" aria-hidden="true"></div>
+  <div class="glow glow--2" aria-hidden="true"></div>
+  <div class="glow glow--3" aria-hidden="true"></div>
+
+  <main class="err">
+    <div class="err__icon">❌</div>
+    <h1 class="err__title">Ops! Parece que ocorreu um erro...</h1>
+    <p class="err__text">Estamos procurando corrigir, pedimos perdão pelo ocorrido!</p>
+    <span class="err__code">Erro 404</span>
+    <a href="/" class="btn btn--primary">← Voltar ao início</a>
+  </main>
+
+  <script>
+
+    (function () {
+      var enabled = true;
+      try { enabled = localStorage.getItem('kira4019-sfx') !== 'off'; } catch (e) {}
+      var ctx = null;
+      function ac() {
+        if (!ctx) { try { ctx = new (window.AudioContext || window.webkitAudioContext)(); } catch (e) { return null; } }
+        if (ctx.state === 'suspended') ctx.resume();
+        return ctx;
+      }
+      function tone(f, d, type, v, slideTo, when) {
+        if (!enabled) return;
+        var a = ac(); if (!a) return;
+        var t = a.currentTime + (when || 0);
+        var o = a.createOscillator(), g = a.createGain();
+        o.type = type || 'sawtooth';
+        o.frequency.setValueAtTime(f, t);
+        if (slideTo) o.frequency.exponentialRampToValueAtTime(slideTo, t + d);
+        g.gain.setValueAtTime(0.0001, t);
+        g.gain.linearRampToValueAtTime(v || 0.045, t + 0.006);
+        g.gain.exponentialRampToValueAtTime(0.0001, t + d);
+        o.connect(g); g.connect(a.destination);
+        o.start(t); o.stop(t + d + 0.03);
+      }
+      function err() { tone(340, 0.16, 'sawtooth', 0.045); tone(200, 0.26, 'sawtooth', 0.045, null, 0.13); }
+
+      try { err(); } catch (e) {}
+      window.addEventListener('pointerdown', function once() { err(); window.removeEventListener('pointerdown', once); }, { once: true });
+    })();
+  </script>
+</body>
+</html>

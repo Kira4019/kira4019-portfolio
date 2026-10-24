@@ -1,0 +1,23 @@
+MÚSICA DE FUNDO
+===============
+
+O arquivo worry-slowed.mp3 já está incluído nesta pasta e é o que toca
+no mini player do site ("worry (slowed)" — lonown).
+
+Para trocar a música:
+
+1. Coloque o novo arquivo nesta pasta (MP3, OGG ou WAV).
+2. Abra data/site.json e altere o campo "local" dentro do bloco "music":
+
+   "local": "assets/music/outro-arquivo.mp3"
+
+Também é possível manter o mesmo nome (worry-slowed.mp3) e apenas
+substituir o arquivo.
+
+Para usar o player do YouTube em vez do arquivo local, deixe:
+
+   "local": ""
+
+O site mantém links para Spotify e YouTube no próprio player.
+
+Use apenas áudios que você tenha direito de usar.

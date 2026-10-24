@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" id="metaDesc" content="" />
+  <meta name="author" id="metaAuthor" content="" />
+  <meta name="theme-color" id="metaTheme" content="#0d0b14" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" id="ogTitle" content="" />
+  <meta property="og:description" id="ogDesc" content="" />
+  <meta property="og:locale" content="pt_BR" />
+  <title>kira4019 — Programador</title>
+
+  <link rel="icon" id="favicon" href="assets/favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@600;700;800;900&family=Sora:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <script>try{var t=localStorage.getItem('kira4019-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+</head>
+<body>
+
+  <div class="glow glow--1" aria-hidden="true"></div>
+  <div class="glow glow--2" aria-hidden="true"></div>
+  <div class="glow glow--3" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <a href="#home" class="nav__logo" aria-label="Início">
+      <img src="assets/kira.webp" data-bind-src="brand.logo" alt="kira4019" class="nav__logo-img" />
+      <span class="nav__logo-text"><span data-bind="brand.name"></span><span class="dot">.</span></span>
+    </a>
+
+    <nav class="nav__links" id="navLinks">
+      <a href="#home" class="nav__link">Início</a>
+      <a href="#sobre" class="nav__link">Sobre</a>
+      <a href="#servidores" class="nav__link">Projetos</a>
+      <a href="#contato" class="nav__link nav__link--cta">Contato</a>
+    </nav>
+
+    <button class="nav__burger" id="burger" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+
+    <section class="hero" id="home">
+      <div class="hero__grid">
+        <div class="hero__content">
+          <span class="eyebrow reveal"><span class="eyebrow__dot"></span> <span data-bind="hero.eyebrow"></span></span>
+
+          <h1 class="hero__title reveal">
+            <span data-bind="hero.titleBefore"></span> <span class="hero__title-accent" data-bind="hero.titleAccent"></span>
+          </h1>
+
+          <p class="hero__role reveal" aria-label="Bots Discord, automação, Python, JavaScript, Java e engenharia militar">
+            <span id="typed"></span><span class="caret" aria-hidden="true"></span>
+          </p>
+
+          <p class="hero__desc reveal" data-bind="hero.desc"></p>
+
+          <div class="hero__cta reveal">
+            <a href="#servidores" class="btn btn--primary">Ver projetos</a>
+            <a href="#sobre" class="btn btn--ghost">Sobre mim</a>
+            <button type="button" class="btn btn--ghost btn--icon" data-copy-bind="contact.discord" data-copy-label="Discord copiado">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.3698a19.7913 19.7913 0 0 0-4.8851-1.5152.0741.0741 0 0 0-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 0 0-.0785-.037 19.7363 19.7363 0 0 0-4.8852 1.515.0699.0699 0 0 0-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 0 0 .0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 0 0 .0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 0 0-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 0 1-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 0 1 .0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 0 1 .0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 0 1-.0066.1276 12.2986 12.2986 0 0 1-1.873.8914.0766.0766 0 0 0-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 0 0 .0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 0 0 .0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 0 0-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
+              Discord
+            </button>
+          </div>
+        </div>
+
+        <div class="hero__art reveal" data-animpause>
+          <div class="hero__art-glow" aria-hidden="true"></div>
+          <div class="hero__char-float">
+            <img src="assets/kira.webp" data-bind-src="hero.image" alt="kira4019" class="hero__char" id="heroChar" width="460" height="460" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="tape" data-animpause aria-hidden="true">
+      <div class="tape__track" id="tapeTrack"></div>
+    </div>
+
+    <section class="stats-band">
+      <div class="container">
+        <div class="stats-grid" id="statsGrid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="sobre">
+      <div class="container">
+        <span class="section__label reveal">Sobre</span>
+        <div class="about">
+          <div class="about__text">
+            <h2 class="section__title reveal" data-bind="about.title"></h2>
+            <div id="aboutParas"></div>
+            <div class="chips reveal" id="aboutChips"></div>
+          </div>
+
+          <aside class="about__card reveal">
+            <div class="profile-card">
+              <div class="profile-card__head">
+                <div class="profile-card__avatar">
+                  <img data-bind-src="profile.avatar" alt="Foto de perfil de kira4019" id="avatarImg"
+                       onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+                  <span class="profile-card__initials" style="display:none" id="initials"></span>
+                  <i class="profile-card__status profile-card__status--dnd" title="Status"></i>
+                </div>
+                <div>
+                  <h3 class="profile-card__name" data-bind="profile.nick"></h3>
+                  <p class="profile-card__handle" data-bind="profile.handle"></p>
+                </div>
+              </div>
+              <ul class="profile-card__info">
+                <li><span>Nome</span><strong data-bind="profile.name"></strong></li>
+                <li><span>Função</span><strong data-bind="profile.role"></strong></li>
+                <li><span>Foco</span><strong data-bind="profile.focus"></strong></li>
+                <li><span>Status</span><strong class="status-dnd" data-bind="profile.status"></strong></li>
+              </ul>
+              <a href="#contato" class="btn btn--primary btn--block">Entrar em contato</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <div class="info-grid reveal">
+        <div class="info-card"><span>Formação</span><strong>Curso Pré-formatório do IME</strong></div>
+        <div class="info-card"><span>Futuro</span><strong>Engenheiro Militar</strong></div>
+        <div class="info-card"><span>Atualmente</span><strong>Bots Discord · Automação</strong></div>
+        <div class="info-card"><span>Localização</span><strong>Brasil</strong></div>
+      </div>
+    </section>
+
+    <section class="section" id="servidores">
+      <div class="container">
+        <div class="showcase reveal" id="showcase">
+          <div class="showcase__bg" aria-hidden="true"></div>
+          <div class="showcase__photo" aria-hidden="true"></div>
+          <div class="showcase__shade" aria-hidden="true"></div>
+
+          <div class="showcase__content">
+            <div class="showcase__head">
+              <h2 class="showcase__title" data-bind="servers.title"></h2>
+              <p class="showcase__desc" data-bind="servers.desc"></p>
+            </div>
+            <div class="showcase__cards showcase__cards--solo" id="serverCards"></div>
+          </div>
+        </div>
+
+        <div class="proficiency reveal">
+          <h3 class="proficiency__title">Tecnologias &amp; Habilidades</h3>
+          <div class="bars" id="bars"></div>
+        </div>
+
+        <div class="proficiency reveal">
+          <h3 class="proficiency__title">Próximas áreas em mira</h3>
+          <div class="chips next-chips" id="nextChips"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--cta" id="contato">
+      <div class="container">
+        <div class="cta">
+          <span class="section__label reveal" data-bind="contact.label"></span>
+          <h2 class="cta__title reveal" data-bind="contact.title"></h2>
+          <p class="cta__text reveal" data-bind="contact.text"></p>
+          <button type="button" class="btn btn--primary btn--lg reveal" data-copy-bind="contact.discord" data-copy-label="Discord copiado" data-bind="contact.button"></button>
+
+          <div class="contact-cards reveal">
+            <a data-bind-href="contact.github" target="_blank" rel="noopener" class="contact-card">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 4.7 18 5 18 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+              <span class="contact-card__label">GitHub</span>
+              <span class="contact-card__handle" data-bind="contact.githubHandle"></span>
+            </a>
+            <button class="contact-card" type="button" data-copy-bind="contact.discord" data-copy-label="Discord copiado">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.3698a19.7913 19.7913 0 0 0-4.8851-1.5152.0741.0741 0 0 0-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 0 0-.0785-.037 19.7363 19.7363 0 0 0-4.8852 1.515.0699.0699 0 0 0-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 0 0 .0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 0 0 .0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 0 0-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 0 1-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 0 1 .0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 0 1 .0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 0 1-.0066.1276 12.2986 12.2986 0 0 1-1.873.8914.0766.0766 0 0 0-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 0 0 .0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 0 0 .0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 0 0-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
+              <span class="contact-card__label">Discord</span>
+              <span class="contact-card__handle" data-bind="contact.discord"></span>
+            </button>
+            <button class="contact-card" type="button" data-copy-bind="contact.email" data-copy-label="Email copiado">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2 4h20c.6 0 1 .4 1 1v14c0 .6-.4 1-1 1H2c-.6 0-1-.4-1-1V5c0-.6.4-1 1-1zm10 7.2L3.6 6H20.4L12 11.2zM3 7.9V18h18V7.9l-8.5 5.3c-.3.2-.7.2-1 0L3 7.9z"/></svg>
+              <span class="contact-card__label">Email</span>
+              <span class="contact-card__handle" data-bind="contact.email"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__panel">
+        <div class="footer__scene" aria-hidden="true"></div>
+        <div class="footer__content">
+          <div class="footer__top">
+            <div class="footer__brandcol">
+              <a href="#home" class="footer__brand">
+                <img src="assets/kira.webp" data-bind-src="brand.logo" alt="kira4019" class="footer__brand-img" />
+                <span class="footer__brand-text"><span data-bind="brand.name"></span><span class="dot">.</span></span>
+              </a>
+              <p class="footer__about" data-bind="footer.text"></p>
+              <div class="footer__socials">
+                <a data-bind-href="contact.github" target="_blank" rel="noopener" class="footer__social" aria-label="GitHub" title="GitHub">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 4.7 18 5 18 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+                </a>
+                <button class="footer__social" type="button" data-copy-bind="contact.discord" data-copy-label="Discord copiado" aria-label="Discord (copiar)" title="Discord (copiar)">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.3698a19.7913 19.7913 0 0 0-4.8851-1.5152.0741.0741 0 0 0-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 0 0-.0785-.037 19.7363 19.7363 0 0 0-4.8852 1.515.0699.0699 0 0 0-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 0 0 .0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 0 0 .0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 0 0-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 0 1-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 0 1 .0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 0 1 .0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 0 1-.0066.1276 12.2986 12.2986 0 0 1-1.873.8914.0766.0766 0 0 0-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 0 0 .0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 0 0 .0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 0 0-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
+                </button>
+                <button class="footer__social" type="button" data-copy-bind="contact.email" data-copy-label="Email copiado" aria-label="Email (copiar)" title="Email (copiar)">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2 4h20c.6 0 1 .4 1 1v14c0 .6-.4 1-1 1H2c-.6 0-1-.4-1-1V5c0-.6.4-1 1-1zm10 7.2L3.6 6H20.4L12 11.2zM3 7.9V18h18V7.9l-8.5 5.3c-.3.2-.7.2-1 0L3 7.9z"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <nav class="footer__nav" aria-label="Links do rodapé">
+              <span class="footer__nav-title">Navegação</span>
+              <a href="#home">Início</a>
+              <a href="#sobre">Sobre</a>
+              <a href="#servidores">Projetos</a>
+              <a href="#contato">Contato</a>
+            </nav>
+          </div>
+
+          <div class="footer__divider"></div>
+
+          <div class="footer__bottom">
+            <p class="footer__made">Feito com muito <span class="accent">❤</span> por <strong data-bind="footer.madeBy"></strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal de projetos (preenchido pelo script a partir do site.json) -->
+  <div class="modal" id="projModal" aria-hidden="true">
+    <div class="modal__overlay" data-close></div>
+    <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal__close" type="button" data-close aria-label="Fechar">✕</button>
+
+      <div class="modal__head">
+        <span class="modal__logo" id="modalLogo"></span>
+        <div>
+          <h3 class="modal__title" id="modalTitle"></h3>
+          <p class="modal__sub" id="modalSub"></p>
+        </div>
+      </div>
+
+      <div class="mview is-active" id="modalPicker"></div>
+      <div class="mview" id="modalProject" hidden></div>
+    </div>
+  </div>
+
+  <div class="copybar" id="copybar" role="status" aria-live="polite">
+    <span class="copybar__inner">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>
+      <span id="copybarText">Copiado!</span>
+    </span>
+  </div>
+
+  <div class="music__frame" id="musicFrame" aria-hidden="true"></div>
+
+  <aside class="music" id="musicPlayer" aria-label="Música de fundo" hidden>
+    <div class="music__art" aria-hidden="true">
+      <img src="assets/kira.webp" alt="" />
+      <span class="music__eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    </div>
+
+    <div class="music__body">
+      <p class="music__tag" id="musicTag">Carregando…</p>
+      <p class="music__title" id="musicTitle">worry (slowed)</p>
+      <p class="music__artist" id="musicArtist">lonown</p>
+
+      <div class="music__progress" id="musicProgress" role="slider" tabindex="0"
+           aria-label="Progresso da música" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <span class="music__track"><i class="music__fill" id="musicFill"></i></span>
+      </div>
+
+      <div class="music__row">
+        <button class="music__play" id="musicToggle" type="button" aria-label="Tocar música">
+          <svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.14v13.72c0 .8.87 1.3 1.56.9l10.79-6.86a1.05 1.05 0 0 0 0-1.8L9.56 4.24A1.05 1.05 0 0 0 8 5.14z"/></svg>
+          <svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1.2"/><rect x="14" y="5" width="4" height="14" rx="1.2"/></svg>
+        </button>
+
+        <button class="music__mini" id="musicMute" type="button" aria-label="Silenciar">
+          <svg class="i-vol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a9 9 0 0 1 0 14"/></svg>
+          <svg class="i-mute" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m17 9 6 6M23 9l-6 6"/></svg>
+        </button>
+
+        <input class="music__vol" id="musicVolume" type="range" min="0" max="100" step="1" value="45" aria-label="Volume da música" />
+
+        <a class="music__mini music__link" id="musicSpotify" href="https://open.spotify.com/track/5zE2NfNO04DYlvdUrp4tQk" target="_blank" rel="noopener" aria-label="Ouvir no Spotify" title="Ouvir no Spotify">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .8A11.2 11.2 0 1 0 23.2 12 11.2 11.2 0 0 0 12 .8zm5.14 16.15a.7.7 0 0 1-.96.23 14.6 14.6 0 0 0-8-.87.7.7 0 0 1-.31-1.36 16 16 0 0 1 8.84.96.7.7 0 0 1 .43.94zm1.37-3.05a.87.87 0 0 1-1.2.29 17.9 17.9 0 0 0-9.75-1.06.87.87 0 0 1-.39-1.7 19.7 19.7 0 0 1 10.75 1.16.87.87 0 0 1 .59 1.31zm.12-3.18a21.4 21.4 0 0 0-11.7-1.26.95.95 0 1 1-.42-1.86 23.3 23.3 0 0 1 12.75 1.37.95.95 0 0 1-.63 1.75z"/></svg>
+        </a>
+        <a class="music__mini music__link" id="musicYtLink" href="https://www.youtube.com/watch?v=lCKU-tI-upI" target="_blank" rel="noopener" aria-label="Ouvir no YouTube" title="Ouvir no YouTube">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.9a3 3 0 0 0-2.1-2.1C19.5 4.3 12 4.3 12 4.3s-7.5 0-9.4.5A3 3 0 0 0 .5 6.9 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.1 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.1zM9.6 15.6V8.4l6.2 3.6z"/></svg>
+        </a>
+
+        <button class="music__mini music__close" id="musicClose" type="button" aria-label="Fechar player">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <script src="data/site.fallback.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

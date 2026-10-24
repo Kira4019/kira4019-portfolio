@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" role="img" aria-label="Avatar de kira4019">
+  <defs>
+    <linearGradient id="ag1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eef1f5"/>
+      <stop offset=".55" stop-color="#b4bcc8"/>
+      <stop offset="1" stop-color="#6f7684"/>
+    </linearGradient>
+    <linearGradient id="ag2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2a2f37"/>
+      <stop offset=".55" stop-color="#171a20"/>
+      <stop offset="1" stop-color="#0c0d10"/>
+    </linearGradient>
+    <filter id="aglow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="200" height="200" rx="40" fill="url(#ag2)"/>
+  <circle cx="100" cy="100" r="78" fill="none" stroke="#3a3f4a" stroke-width="2"/>
+  <circle cx="100" cy="100" r="62" fill="none" stroke="#242931" stroke-width="1"/>
+  <path d="M62 52v96M62 100l50-42M62 100l54 44" stroke="url(#ag1)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#aglow)"/>
+  <circle cx="142" cy="52" r="7" fill="#cdd2db"/>
+  <circle cx="142" cy="148" r="4" fill="#8a92a0"/>
+</svg>
