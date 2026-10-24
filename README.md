@@ -1,7 +1,7 @@
-# Portfólio do kira4019
+# Portfólio do Publico 
 
 Site de portfólio estático com painel de edição, pronto para rodar no seu computador
-ou publicar na Hostinger.
+ou publicar em hosts mais conhecidas, ex: hostinger netlify etc...
 
 O visual foi mantido no tema escuro/claro original, com o conteúdo adaptado para
 **kira4019 — Programador · Bots Discord · Engenharia Militar**. O site tem
